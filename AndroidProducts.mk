@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_hiphi.mk
+    $(LOCAL_DIR)/twrp_arcfox.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_hiphi-user \
-    twrp_hiphi-userdebug \
-    twrp_hiphi-eng
+    twrp_arcfox-user \
+    twrp_arcfox-userdebug \
+    twrp_arcfox-eng

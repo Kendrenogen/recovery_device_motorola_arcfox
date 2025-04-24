@@ -1,5 +1,6 @@
 on late-init
-    write /sys/class/leds/vibrator/trigger "transient"
+    chown system system /sys/class/qcom-haptics/primitive_duration
+    chmod 0600 /sys/class/qcom-haptics/primitive_duration
 
 on late-fs
     chmod 0666 /dev/qcom_haptic
@@ -7,9 +8,6 @@ on late-fs
 
 on boot
     start qti.vibrator
-
-on property:sys.boot_completed=1
-    setprop vendor.haptic.calibrate.done 1
 
 service qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     class hal
@@ -20,3 +18,6 @@ service qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     setenv RICHTAP_DEVICE_PATH  /dev/qcom_haptic
     setenv ENV_RICHTAP_CONFIG_PATH /odm/etc/aac_richtap.config
     seclabel u:r:recovery:s0
+
+on property:sys.boot_completed=1
+    setprop vendor.haptic.calibrate.done 1

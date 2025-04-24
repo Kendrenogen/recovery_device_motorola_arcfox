@@ -7,6 +7,7 @@
 # <mount_point>       <fstype>    <device>           <device2>                   <flags>
 # Boot partitions
 /boot                 emmc        /dev/block/bootdevice/by-name/boot             flags=display="Boot";slotselect;backup=1;flashimg=1
+/init_boot            emmc        /dev/block/bootdevice/by-name/init_boot        flags=display="Init Boot";slotselect;backup=1;flashimg=1
 /dtbo                 emmc        /dev/block/bootdevice/by-name/dtbo             flags=display="DTBO";slotselect;backup=1;flashimg=1
 /vendor_boot          emmc        /dev/block/bootdevice/by-name/vendor_boot      flags=display="Vendor Boot";slotselect;backup=1;flashimg=1
 /vbmeta               emmc        /dev/block/bootdevice/by-name/vbmeta           flags=display="VBMeta";slotselect;backup=1;flashimg=1
@@ -26,6 +27,8 @@
 /vendor               erofs       vendor                                         flags=display="Vendor"
 /vendor_dlkm          ext4        vendor_dlkm                                    flags=display="Vendor DLKM"
 /vendor_dlkm          erofs       vendor_dlkm                                    flags=display="Vendor DLKM"
+/system_dlkm          ext4        system_dlkm                                    flags=display="System DLKM"
+/system_dlkm          erofs       system_dlkm                                    flags=display="System DLKM"
 
 # Flashable logical partitions
 /system_image         emmc        /dev/block/bootdevice/by-name/system           flags=display="System Image";backup=1;flashimg=1
@@ -33,9 +36,10 @@
 /product_image        emmc        /dev/block/bootdevice/by-name/product          flags=display="Product Image";backup=1;flashimg=1
 /vendor_image         emmc        /dev/block/bootdevice/by-name/vendor           flags=display="Vendor Image";backup=1;flashimg=1
 /vendor_dlkm_image    emmc        /dev/block/bootdevice/by-name/vendor_dlkm      flags=display="Vendor DLKM Image";backup=1;flashimg=1
+/system_dlkm_image    emmc        /dev/block/bootdevice/by-name/system_dlkm      flags=display="System DLKM Image";backup=1;flashimg=1
 
 # Data partitions
-/metadata             ext4        /dev/block/by-name/metadata                    flags=display="Metadata"
+/metadata             f2fs        /dev/block/by-name/metadata                    flags=display="Metadata"
 
 # Firmware partitions
 /persist              ext4        /dev/block/bootdevice/by-name/persist          flags=display="Persist"

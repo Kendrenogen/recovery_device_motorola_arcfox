@@ -10,10 +10,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # API
-BOARD_SHIPPING_API_LEVEL := 31
-BOARD_API_LEVEL := 31
-PRODUCT_SHIPPING_API_LEVEL := 31
-SHIPPING_API_LEVEL := 31
+BOARD_SHIPPING_API_LEVEL := 34
+BOARD_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 34
+SHIPPING_API_LEVEL := 34
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -29,11 +29,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_vendor=true
 
 # Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl-qti \
-    android.hardware.boot@1.2-impl-qti.recovery \
-    android.hardware.boot@1.2-service
-
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 

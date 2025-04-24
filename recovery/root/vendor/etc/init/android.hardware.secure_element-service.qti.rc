@@ -1,0 +1,9 @@
+on property:hwservicemanager.ready=true
+    start secure_element
+
+service secure_element /system/bin/android.hardware.secure_element-service.qti
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    seclabel u:r:recovery:s0

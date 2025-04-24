@@ -1,24 +1,24 @@
-Device configuration for Motorola Edge 30 Pro / Edge Plus (2022) / Edge Plus 5G UW / Edge X30 (hiphi/hiphic/hiphid)
+Device configuration for Motorola Razr 50 Ultra / Razr Plus (2024) (arcfox)
 =========================================
 
-The Motorola Edge 30 Pro / Edge Plus (2022) / Edge Plus 5G UW / Edge X30 (codenamed _"hiphi/hiphic/hiphid"_) is a flagship smartphone from Motorola mobility announced in December 2021.
+The Motorola Razr 50 Ultra / Razr Plus (2024) (codenamed _"arcfox"_) is a flagship smartphone from Motorola mobility announced in June 2024.
 
 ## Device specifications
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-SoC     | Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm)
-CPU     | Octa-core (1x3.0 GHz Kryo 780 & 3x2.5 GHz Kryo 780 & 4x1.8GHz Kryo 780)
-GPU     | Adreno 730
-Memory  | 8/12 GB RAM (LPDDR5)
-Shipped Android Version | 12.0, My UX 3.0 (Global) / MY UI 3.0 (China)
-Storage | 128/256/512 GB (UFS 3.1)
-Battery | Non-removable Li-Po 4800 mAh (Global) / 5000 mAh (China) battery
-Display | 2400 x 1080 pixels, 6.18 inches (~403 ppi density)
-Camera  | 50MP (Main) + 50MP (Ultra-wide) + 2MP (Depth) + 60MP (Selfie)
+SoC     | Qualcomm SM8635 Snapdragon 8s Gen 3 (4 nm)
+CPU     | Octa-core (1x3.0 GHz Cortex-X4 & 4x2.8 GHz Cortex-A720 & 3x2.0 GHz Cortex-A520)
+GPU     | Adreno 735
+Memory  | 8/12 GB RAM (LPDDR5X)
+Shipped Android Version | 14, Hello UI 1.0
+Storage | 256/512 GB (UFS 4.0)
+Battery | Non-removable Li-Po 4000 mAh battery
+Display | 1080 x 2640 pixels, 6.9 inches (~413 ppi density) internal, 1272 x 1080 pixels, 4 inches (~417 ppi density) external
+Camera  | 50MP (Main) + 50MP (Telephoto) + 32MP (Selfie)
 
 ## Device picture
-![Motorola Edge 30 Pro / Edge Plus (2022) / Edge Plus 5G UW / Edge X30](https://i.imgur.com/B0cNJ79.png)
+![Motorola Razr 50 Ultra / Razr Plus (2024)](https://fdn2.gsmarena.com/vv/pics/motorola/motorola-razr-50-ultra-4.jpg)
 
 # Status
 Current state of features:
@@ -47,7 +47,7 @@ Current state of features:
 ```bash
 export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
-lunch twrp_hiphi-eng
+lunch twrp_arcfox-eng
 mka recoveryimage -j$(nproc --all)
 ```
 

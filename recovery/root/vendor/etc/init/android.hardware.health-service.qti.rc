@@ -1,0 +1,19 @@
+on boot
+    start health-default
+
+service health-default /system/bin/android.hardware.health-service.qti
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    capabilities WAKE_ALARM BLOCK_SUSPEND
+    file /dev/kmsg w
+    seclabel u:r:recovery:s0
+
+#service vendor.charger /vendor/bin/hw/android.hardware.health-service.qti --charger
+#    class charger
+#    seclabel u:r:charger_vendor:s0
+#    user system
+#    group system wakelock input graphics
+#    capabilities SYS_BOOT WAKE_ALARM BLOCK_SUSPEND
+#    file /dev/kmsg w

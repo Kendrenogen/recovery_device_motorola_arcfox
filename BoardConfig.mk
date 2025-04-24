@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/hiphi
+DEVICE_PATH := device/motorola/arcfox
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -15,9 +15,11 @@ AB_OTA_UPDATER := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 AB_OTA_PARTITIONS += \
     boot \
+    init_boot \
     dtbo \
     product \
     system \
+    system_dlkm \
     system_ext \
     recovery \
     vbmeta \
@@ -28,18 +30,11 @@ AB_OTA_PARTITIONS += \
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a-dotprod
+TARGET_ARCH_VARIANT := armv9-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 := 
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo300
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 
 # Bootloader
 TARGET_NO_BOOTLOADER := false
@@ -47,7 +42,7 @@ TARGET_USES_UEFI := true
 TARGET_USES_REMOTEPROC := true
 
 # Display
-TARGET_SCREEN_DENSITY := 400
+TARGET_SCREEN_DENSITY := 420
 
 # Kernel
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
@@ -62,23 +57,23 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor vendor_dlkm
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_dlkm system_ext product vendor vendor_dlkm
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200
 BOARD_SUPER_PARTITION_SIZE := 9126805504
-BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
+BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
 BOARD_KERNEL-GKI_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
-BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
-BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 134217728
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
+BOARD_SYSTEMIMAGE_PARTITION_TYPE := erofs
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_USES_METADATA_PARTITION := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
-TARGET_BOARD_PLATFORM := taro
-TARGET_BOOTLOADER_BOARD_NAME := taro
-QCOM_BOARD_PLATFORMS += taro
+TARGET_BOARD_PLATFORM := pineapple
+TARGET_BOOTLOADER_BOARD_NAME := pineapple
+QCOM_BOARD_PLATFORMS += pineapple
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -99,7 +94,7 @@ BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
-BOARD_AVB_VBMETA_SYSTEM := product system system_ext
+BOARD_AVB_VBMETA_SYSTEM := product system system_dlkm system_ext
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
@@ -133,9 +128,9 @@ TW_INCLUDE_NTFS_3G := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_NO_SCREEN_BLANK := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_MAX_BRIGHTNESS := 2047
-TW_DEFAULT_BRIGHTNESS := 1024
-TW_FRAMERATE := 60
+TW_MAX_BRIGHTNESS := 16384
+TW_DEFAULT_BRIGHTNESS := 8192
+TW_FRAMERATE := 165
 TW_HAS_EDL_MODE := true
 TW_LOAD_VENDOR_MODULES := "msm_drm.ko mmi_annotate.ko mmi_info.ko mmi_relay.ko mmi_charger.ko mmi_sys_temp.ko sensors_class.ko touchscreen_mmi.ko stmicro_mmi.ko goodix_brl_mmi.ko sx937x_sar.ko bm_adsp_ulog.ko qti_glink_charger.ko qpnp_adaptive_charge.ko q6_pdr_dlkm.ko q6_notifier_dlkm.ko snd_event_dlkm.ko gpr_dlkm.ko spf_core_dlkm.ko adsp_loader_dlkm.ko"
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone39/temp
