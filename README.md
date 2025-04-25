@@ -47,7 +47,7 @@ Current state of features:
 ```bash
 export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
-lunch twrp_arcfox-eng
+lunch twrp_arcfox-ap2a-eng
 mka recoveryimage -j$(nproc --all)
 ```
 

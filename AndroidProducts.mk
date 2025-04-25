@@ -9,6 +9,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_arcfox.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_arcfox-user \
-    twrp_arcfox-userdebug \
-    twrp_arcfox-eng
+    twrp_arcfox-ap2a-user \
+    twrp_arcfox-ap2a-userdebug \
+    twrp_arcfox-ap2a-eng
