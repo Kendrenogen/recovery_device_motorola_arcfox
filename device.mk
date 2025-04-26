@@ -70,6 +70,9 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Take a few libraries from sources
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.vibrator-V2-ndk_platform.so \
+    android.hardware.secure_element@1.0.so \
+    android.hardware.secure_element@1.1.so \
+    android.hardware.secure_element@1.2.so \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
     android.hidl.memory.token@1.0 \
@@ -84,6 +87,9 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V2-ndk_platform.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.secure_element@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.secure_element@1.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.secure_element@1.2.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
