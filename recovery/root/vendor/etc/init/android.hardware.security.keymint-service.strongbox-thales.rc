@@ -1,4 +1,5 @@
 on property:hwservicemanager.ready=true && property:vendor.sys.listeners.registered=true
+    start keymint-qti
     start keymint-strongbox
 
 service keymint-strongbox /system/bin/android.hardware.security.keymint-service.strongbox-thales
