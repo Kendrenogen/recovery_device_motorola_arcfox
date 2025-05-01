@@ -132,6 +132,7 @@ TW_MAX_BRIGHTNESS := 16384
 TW_DEFAULT_BRIGHTNESS := 8192
 TW_FRAMERATE := 165
 TW_HAS_EDL_MODE := true
+TW_EXCLUDE_APEX := true
 TW_LOAD_VENDOR_MODULES := "msm_drm.ko mmi_annotate.ko mmi_info.ko mmi_relay.ko mmi_charger.ko mmi_sys_temp.ko sensors_class.ko touchscreen_mmi.ko goodix_brl_mmi.ko sx937x_multi.ko bm_adsp_ulog.ko qti_glink_charger.ko qpnp_adaptive_charge.ko q6_pdr_dlkm.ko q6_notifier_dlkm.ko snd_event_dlkm.ko gpr_dlkm.ko spf_core_dlkm.ko adsp_loader_dlkm.ko"
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone39/temp
 TW_EXCLUDE_DEFAULT_USB_INIT := true
