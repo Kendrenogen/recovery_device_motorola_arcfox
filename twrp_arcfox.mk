@@ -27,6 +27,6 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="arcfox_g-user 16 W1UX36H.72-45-4 afaa77-6e121 release-keys MW-301"
+    PRIVATE_BUILD_DESC="arcfox_g-user 16 W1UXS36H.72-45-4-1 8e9706-dc7021 release-keys MW-301"
 
-BUILD_FINGERPRINT := motorola/arcfox_g/arcfox:16/W1UX36H.72-45-4/afaa77-6e121:user/release-keys
+BUILD_FINGERPRINT := motorola/arcfox_g/arcfox:16/W1UXS36H.72-45-4-1/8e9706-dc7021:user/release-keys
